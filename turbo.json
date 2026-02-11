@@ -1,56 +1,10 @@
 {
-  "$schema": "./node_modules/turbo/schema.json",
+  "$schema": "../../node_modules/turbo/schema.json",
+  "extends": ["//"],
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
-      "inputs": ["src/**", "package.json", "tsdown.config.ts", "tsconfig.json"],
-      "outputs": [
-        ".next/**",
-        "!.next/cache/**",
-        ".output/**",
-        ".svelte-kit/**",
-        ".vitepress/dist/**",
-        "dist/**"
-      ]
-    },
-    "dev": {
-      "cache": false,
-      "persistent": true
-    },
-    "lint": {
-      "dependsOn": ["^build"],
-      "inputs": ["src/**", "test/**", "*.config.*", "package.json"]
-    },
-    "//#test": {
-      "cache": true,
-      "dependsOn": ["^build"],
-      "inputs": ["src/**", "test/**", "*.config.*", "package.json", "vitest.config.ts"],
-      "outputs": ["coverage/**"]
-    },
-    "//#test:coverage": {
-      "dependsOn": ["^build"],
-      "inputs": ["src/**", "test/**", "*.config.*", "package.json", "vitest.config.ts"],
-      "outputs": ["coverage/**"]
-    },
-    "//#test:update": {
-      "cache": false,
-      "dependsOn": ["^build"]
-    },
-    "//#test:watch": {
-      "cache": false,
-      "dependsOn": ["^build"],
-      "persistent": true
-    },
-    "typecheck": {
-      "dependsOn": ["^build"],
-      "inputs": [
-        "src/**",
-        "test/**",
-        "*.config.*",
-        "package.json",
-        "tsconfig.json",
-        "pyproject.toml"
-      ]
+      "outputs": ["dist/**"]
     }
   }
 }

@@ -1,6 +1,0 @@
-openapi: 3.1.1
-info:
-  title: Invalid OpenAPI 3.1.1 servers entry example
-  version: 1
-servers:
-  - foo
